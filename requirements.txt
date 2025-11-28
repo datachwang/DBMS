@@ -1,0 +1,5 @@
+flask
+duckdb
+gunicorn
+pandas
+os
