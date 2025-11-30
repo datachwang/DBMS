@@ -1,0 +1,32 @@
+<div class="main">
+    <h1>User Update Page</h1>
+    <p>Insert a new transaction into <code>user_transations</code>.</p>
+
+    <!-- Flash messages (optional if you use flash in Flask) -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/user_update">
+        <!-- we’ll distinguish this POST in Flask with this hidden field -->
+        <input type="hidden" name="action_type" value="new_transaction">
+
+        <label for="card_id">Card ID:</label><br>
+        <input type="number" id="card_id" name="card_id" required><br><br>
+
+        <label for="amount">Amount:</label><br>
+        <input type="number" id="amount" name="amount" step="0.01" required><br><br>
+
+        <label for="merchant_id">Merchant ID:</label><br>
+        <input type="number" id="merchant_id" name="merchant_id" required><br><br>
+
+        <label for="mcc">MCC Code:</label><br>
+        <input type="number" id="mcc" name="mcc" required><br><br>
+
+        <button type="submit">Insert Transaction</button>
+    </form>
+</div>
