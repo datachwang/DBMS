@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <title> {{title}} </title>
+</head>
+
+
+<body>
+
+<div class="container">
+    {{ table_content | safe }}
+</div>
+
+<body>
+</html>
