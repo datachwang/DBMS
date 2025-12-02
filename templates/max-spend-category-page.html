@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+.sidenav {
+  height: 100vh;
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 140px;
+  font-size: 28px;
+  padding: 0px 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidenav">
+  <a href="/"> Home Page </a>
+  <a href="/user_spend"> Browse: User Spending </a>
+  <a href="/merchant_analysis"> Browse: Merchant Analysis </a>
+  <a href="/user_update"> Update: New Users </a>
+  <a href="/user_card"> Browse: User Card </a>
+  <a href="/user_categorized_spend"> Query: User Categorized Spend </a>
+  <a href="/max_spend_category"> Query: Max Spend Category </a>
+</div>
+
+<div class="main">
+
+    <title> Maximum Spending Category </title>
+    <h1>This is the Maximum Spending Category Page.</h1>
+    <p>This is a table of {{title}}.</p>
+
+    <div>
+        <button onclick="loadContent('/max_spend_category_output')"> Make a query. </button>
+    </div>
+
+    <iframe id="query" src="" frameborder="1" width="800" height="600"> Error </iframe>
+
+    <script>
+    function loadContent(url) {
+       document.getElementById('query').src = url;
+    }
+    </script>
+
+</div>
+
+<body>
+
+</html>
